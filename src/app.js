@@ -6,6 +6,7 @@ const hbs = require("hbs")
 
 
 const app = express()
+const PORT = process.env.PORT || 3000 //heroku dynamic port setting
 
 
 // define path for Express config
@@ -108,6 +109,6 @@ app.get("*", (req, res) => {
     })
 
 })
-app.listen(3000, () => {
-    console.log('server is running! ')
+app.listen(PORT, () => {
+    console.log(`server is running on port ${PORT}!`)
 })
